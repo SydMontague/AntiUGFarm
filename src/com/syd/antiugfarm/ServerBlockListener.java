@@ -5,10 +5,11 @@ import java.util.List;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.event.block.BlockListener;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-public class ServerBlockListener extends BlockListener
+public class ServerBlockListener implements Listener
 {
     AntiUGFarm plugin;
 
@@ -16,15 +17,15 @@ public class ServerBlockListener extends BlockListener
     {
         plugin = instance;
     }
-
-    @SuppressWarnings("unchecked")
+ 
+    @EventHandler
     public void onBlockPlace(BlockPlaceEvent event)
     {
-        List<Integer> checked = AntiUGFarm.config.getList("checked", null);
-        List<Integer> ignored = AntiUGFarm.config.getList("ignored", null);
-        String notallowed = AntiUGFarm.config.getString("string.notallowed", "You are not allowed to plant trees under the earth!");
+        List<Integer> checked = AntiUGFarm.config.getIntegerList("checked");
+        List<Integer> ignored = AntiUGFarm.config.getIntegerList("ignored");
+        String notallowed = AntiUGFarm.config.getString("string.notallowed", "You are not allowed to create a farm here!");
 
-        if (!PermissionsSystem.hasPermission(event.getPlayer().getWorld().getName(), event.getPlayer().getName(), "antiugfarm.ignore"))
+        if (!event.getPlayer().hasPermission("antiugfarm.ignore"))
         {
             if (checked.contains(event.getBlock().getTypeId()))
             {
@@ -34,16 +35,15 @@ public class ServerBlockListener extends BlockListener
                 int x = location.getBlockX();
                 int y = location.getBlockY() + 1;
                 int z = location.getBlockZ();
+                int maxheight = world.getMaxHeight();
 
-                for (; y < 128; y++)
-                {
+                for (; y < maxheight; y++)
                     if (!ignored.contains(world.getBlockAt(x, y, z).getTypeId()))
                     {
                         event.getPlayer().sendMessage(notallowed);
                         event.setCancelled(true);
                         return;
                     }
-                }
             }
             else if (!ignored.contains(event.getBlock().getTypeId()))
             {
@@ -54,14 +54,12 @@ public class ServerBlockListener extends BlockListener
                 int z = location.getBlockZ();
 
                 for (; y > 0; y--)
-                {
                     if (checked.contains(world.getBlockAt(x, y, z).getTypeId()))
                     {
                         event.getPlayer().sendMessage(notallowed);
                         event.setCancelled(true);
                         return;
                     }
-                }
             }
         }
     }
