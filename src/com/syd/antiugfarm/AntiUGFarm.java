@@ -1,5 +1,6 @@
 package com.syd.antiugfarm;
 
+import java.io.File;
 import java.util.logging.Logger;
 
 import org.bukkit.configuration.file.FileConfiguration;
@@ -18,7 +19,8 @@ public class AntiUGFarm extends JavaPlugin
 
         // initializing config.yml
         config = getConfig();
-        saveDefaultConfig();
+        if (!new File(this.getDataFolder().getPath() + File.separatorChar + "config.yml").exists())
+            saveDefaultConfig();
 
         if (!config.getString("version").equalsIgnoreCase(pdffile.getVersion()))
         {

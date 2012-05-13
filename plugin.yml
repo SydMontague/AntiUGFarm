@@ -1,6 +1,6 @@
 name: AntiUGFarm
 main: com.syd.antiugfarm.AntiUGFarm
-version: 0.3
+version: 0.3.1
 description: Prevents placing Saplings under earth.
 permissions:
   antiundergroundfarm.ignore:
