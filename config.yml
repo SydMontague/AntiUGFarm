@@ -1,0 +1,16 @@
+checked:
+  - SAPLING
+  - CROPS
+  - CACTUS
+  - SUGAR_CANE_BLOCK
+  - PUMPKIN_STEM
+  - MELON_STEM
+  - CARROT
+  - POTATO
+ignored:
+  - AIR
+  - LEAVES
+  - GLASS
+  - THIN_GLASS
+string:
+  notallowed: "You are not allowed to create a farm here!"

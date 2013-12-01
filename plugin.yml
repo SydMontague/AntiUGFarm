@@ -1,8 +1,8 @@
 name: AntiUGFarm
-main: com.syd.antiugfarm.AntiUGFarm
-version: 0.3.1
-description: Prevents placing Saplings under earth.
+main: de.craftlancer.antiugfarm.AntiUGFarm
+version: 0.4
+description: Prevents placing plants in the underground.
 permissions:
-  antiundergroundfarm.ignore:
+  antiugfarm.ignore:
     description: You can create farm everywhere
-    default: op
+    default: false
