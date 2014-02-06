@@ -1,6 +1,6 @@
 name: AntiUGFarm
 main: de.craftlancer.antiugfarm.AntiUGFarm
-version: 0.4
+version: ${project.version}
 description: Prevents placing plants in the underground.
 permissions:
   antiugfarm.ignore:
