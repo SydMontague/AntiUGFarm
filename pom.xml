@@ -83,4 +83,16 @@
       </plugin>
     </plugins>
   </build>
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>http://ci.craftlancer.de/</url>
+  </ciManagement>
+  <distributionManagement>
+  <repository>
+  <id>craftlancer-repo</id>
+  <name>Craftlancer Maven Repository</name>
+  <url>http://ci.craftlancer.de/plugin/repository/everything/</url>
+  </repository>
+  </distributionManagement>
+  
 </project>
