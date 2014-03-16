@@ -17,7 +17,7 @@
     </repository>
     <snapshotRepository>
       <id>releases</id>
-      <url>http://craftlancer.de:8081/nexus/content/repositories/releases</url>
+      <url>http://craftlancer.de:8081/nexus/content/repositories/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 
