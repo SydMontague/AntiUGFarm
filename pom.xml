@@ -52,7 +52,7 @@
           <target>1.6</target>
         </configuration>
       </plugin>
-      
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -88,11 +88,10 @@
     <url>http://ci.craftlancer.de/</url>
   </ciManagement>
   <distributionManagement>
-  <repository>
-  <id>craftlancer-repo</id>
-  <name>Craftlancer Maven Repository</name>
-  <url>http://ci.craftlancer.de/plugin/repository/everything/</url>
-  </repository>
+    <repository>
+      <id>nexus-releases</id>
+      <url>http://localhost:8081/nexus/content/repositories/releases</url>
+    </repository>
   </distributionManagement>
-  
+
 </project>
