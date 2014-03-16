@@ -9,14 +9,18 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  
-<distributionManagement>
-  <repository>
-    <id>releases</id>
-    <url>http://craftlancer.de:8081/nexus/content/repositories/releases</url>
-  </repository>
-</distributionManagement>
-  
+
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <url>http://craftlancer.de:8081/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>releases</id>
+      <url>http://craftlancer.de:8081/nexus/content/repositories/releases</url>
+    </snapshotRepository>
+  </distributionManagement>
+
   <repositories>
     <repository>
       <id>bukkit-repo</id>
@@ -94,5 +98,5 @@
     <system>Jenkins</system>
     <url>http://ci.craftlancer.de/</url>
   </ciManagement>
-  
+
 </project>
