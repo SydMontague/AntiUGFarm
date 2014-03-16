@@ -10,6 +10,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
+  <distributionManagement>
+    <repository>
+      <id>nexus-releases</id>
+      <url>http://localhost:8081/nexus/content/repositories/releases</url>
+    </repository>
+  </distributionManagement>
+  
   <repositories>
     <repository>
       <id>bukkit-repo</id>
