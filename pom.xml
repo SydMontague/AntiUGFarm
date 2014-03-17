@@ -14,12 +14,12 @@
     <repository>
       <name>Craftlancer Releases</name>
       <id>releases</id>
-      <url>http://repo.craftlancer.de/nexus/content/repositories/releases</url>
+      <url>http://repo.craftlancer.de/content/repositories/releases</url>
     </repository>
     <snapshotRepository>
       <name>Craftlancer Snapshots</name>
       <id>snapshots</id>
-      <url>http://repo.craftlancer.de/nexus/content/repositories/snapshots</url>
+      <url>http://repo.craftlancer.de/content/repositories/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 
